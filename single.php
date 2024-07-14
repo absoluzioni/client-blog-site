@@ -31,11 +31,20 @@ get_header(); ?>
     <div class="py-5 px-7">
       <h3 class="text-2xl font-bold mb-2">Most Recent Posts</h3>
       <ul class="list-disc pl-4 text-sm leading-loose ">
-        <li><a class="hover:text-teal-200 hover:underline" href="#">Example Post</a></li>
-        <li><a class="hover:text-teal-200 hover:underline" href="#">Example Post</a></li>
-        <li><a class="hover:text-teal-200 hover:underline" href="#">Example Post</a></li>
-        <li><a class="hover:text-teal-200 hover:underline" href="#">Example Post</a></li>
-        <li><a class="hover:text-teal-200 hover:underline" href="#">Example Post</a></li>
+
+        <?php
+        $recentPosts = new WP_Query(array(
+          'posts_per_page' => 5
+        ));
+
+        while ($recentPosts->have_posts()) {
+          $recentPosts->the_post();
+        ?>
+
+        <li><a class="hover:text-teal-200 hover:underline" href="<?= the_permalink() ?>"><?= the_title() ?></a></li>
+
+        <?php } ?>
+
       </ul>
     </div>
     <div class="hidden sm:block bg-cover bg-center"
