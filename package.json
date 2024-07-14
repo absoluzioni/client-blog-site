@@ -1,0 +1,21 @@
+{
+  "name": "brads-boilerplate-theme",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npm-run-all --parallel sync wpstart",
+    "wpstart": "tailwindcss -i ./src/index.css -o ./build/index.css --watch --minify",
+    "build": "npm-run-all --parallel wpbuild",
+    "wpbuild": "tailwindcss -i ./src/index.css -o ./build/index.css --minify",
+    "sync": "browser-sync start -p 'localhost:10018' --files '**/*.php' 'build/*.js' 'build/*.css'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "browser-sync": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.4.0"
+  }
+}
