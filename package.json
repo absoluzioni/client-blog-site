@@ -7,7 +7,7 @@
     "wpstart": "tailwindcss -i ./src/index.css -o ./build/index.css --watch --minify",
     "build": "npm-run-all --parallel wpbuild",
     "wpbuild": "tailwindcss -i ./src/index.css -o ./build/index.css --minify",
-    "sync": "browser-sync start -p 'localhost:10018' --files '**/*.php' 'build/*.js' 'build/*.css'"
+    "sync": "browser-sync start -p 'localhost' --files '**/*.php' 'build/*.js' 'build/*.css'"
   },
   "keywords": [],
   "author": "",
